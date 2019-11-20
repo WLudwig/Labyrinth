@@ -1,0 +1,31 @@
+﻿@page
+@model CS4540Final.Models.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>HighScore</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HighScore.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HighScore.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HighScore.Time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HighScore.Time)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.HighScore.HighScoreID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

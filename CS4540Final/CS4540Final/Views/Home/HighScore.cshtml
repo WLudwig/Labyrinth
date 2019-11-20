@@ -1,7 +1,30 @@
-﻿@{
-    ViewData["Title"] = "High Scores";
-}
-<h1>@ViewData["Title"]</h1>
-<h2>The current high scores are:</h2>
+﻿
+@model ICollection<CS4540Final.Models.HighScore>
 
-<p>The High Score Table from the database will be displayed here</p>
+<h1>High Scores</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Score
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

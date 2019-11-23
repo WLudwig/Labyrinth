@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CS4540Final.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CS4540Final.Controllers
 {
@@ -30,16 +31,19 @@ namespace CS4540Final.Controllers
             }
             */
 
+        [Authorize(Roles = "Player")]
         public async Task<IActionResult> HighScore()
         {
             return View(await context.HighScore.ToListAsync());
         }
 
+        [Authorize(Roles = "Player")]
         public IActionResult Rules()
         {
             return View();
         }
 
+        [Authorize(Roles = "Player")]
         public IActionResult Contact()
         {
             return View();

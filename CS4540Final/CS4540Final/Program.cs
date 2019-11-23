@@ -26,7 +26,8 @@ namespace CS4540Final
                 try
                 {
                     var context = services.GetRequiredService<HighScoreDB>();
-                    DbInitializer.Initialize(context);
+                    var context2 = services.GetRequiredService<UsersDB>();
+                    DbInitializer.Initialize(context, context2);
 
                 }
                 catch (Exception ex)

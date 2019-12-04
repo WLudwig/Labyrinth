@@ -1,0 +1,34 @@
+﻿
+@model ICollection<CS4540Final.Models.HighScore>
+
+<h1>High Scores</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Score
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.HighScoreID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

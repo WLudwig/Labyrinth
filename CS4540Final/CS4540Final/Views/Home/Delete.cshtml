@@ -1,0 +1,17 @@
+﻿@model CS4540Final.Models.HighScore
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+
+
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="@Model.HighScoreID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="AdminHighScore">Back to List</a>
+    </form>
+

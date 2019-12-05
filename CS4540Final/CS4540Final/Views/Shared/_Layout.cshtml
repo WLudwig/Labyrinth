@@ -41,7 +41,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Daedalus' Labyrinth</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -53,22 +53,19 @@
                         @if (player)
                         {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Play</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Play</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HighScore">High Scores</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="HighScore">High Scores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Rules">Overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Rules">Overview</a>
                         </li>
                         }
                         @if(admin)
                         { 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminHighScore">Admin Scores</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="AdminHighScore">Admin Scores</a>
                         </li>
                         }
                         <li>

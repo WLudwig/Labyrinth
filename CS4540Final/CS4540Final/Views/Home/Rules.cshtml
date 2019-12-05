@@ -2,10 +2,29 @@
     ViewData["Title"] = "Rules";
 }
 
-<div class="text-center">
+<div class="container">
+    <h1 class="display-4">Overview</h1>
+    <p>
+        This project is an online randomly generated maze game that times how long it takes you to solve a maze. The high scores are saved in the website database.
+        The website was built using ASP.NET Core, and the game was programmed in P5.js. P5.js is a JavaScript framework for quickly prototyping graphical programs in
+        the browser. The maze is rendered using raycasting.
+    </p><p>
+        For more information about raycasting, please see <a href="https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/" target="_blank">this resource</a>
+        as well as <a href="https://lodev.org/cgtutor/raycasting.html" target="_blank">this.</a>
+    </p>
     <h1 class="display-4">How to Play</h1>
+
     <p>You will be placed in a random labyrinth and it is your job to make it to the end of this labyrinth.</p>
-    <p>The fastest times will be recorded.</p>
-    <p>The labyrinth is completely dark besides a small area in front of you which is illuminated by your flashlight.</p>
-    <p>Have fun!!!</p>
+    <p>Move through the labyrinth using the <strong>W,A,S,D</strong> keys. There is a minimap in the upper right corner which will show where you have been, as well as where your destination is.</p>
+    <p>Your goal is to get to the <span style="color:lime;background-color:black">green</span> destination marker in as short a time as possible.</p>
+
+    <h1 class="display-4">Contributions / Caveats</h1>
+    <p>
+        We spent upwards of 7 hours attempting to our solution to the cloud. We spoke to professor St. Germain at length following the last
+        meeting of class. Despite his help we were unable to publish it using AWS.
+    </p>
+    <p>
+        Significant work went into getting the raycasting to work and look presentable. The math was a bit messier than we would have liked due to how the map was generated.
+        We were going to implement texture mapped walls, however the P5.js framework was ill equipped to handle the per-pixel precision required.
+    </p>
 </div>

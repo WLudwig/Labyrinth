@@ -24,8 +24,8 @@ namespace CS4540Final.Data
 
             var HighScores = new HighScore[]
             {
-                new HighScore{ Name = "Jacob", Time = 100},
-                new HighScore{ Name = "Will", Time = 105}
+                new HighScore{ Name = "Jacob", Time = 100000},
+                new HighScore{ Name = "Will", Time = 105000}
             };
             foreach (HighScore h in HighScores)
             {

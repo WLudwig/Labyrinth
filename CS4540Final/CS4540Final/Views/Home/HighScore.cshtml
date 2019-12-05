@@ -10,7 +10,7 @@
                 Name
             </th>
             <th>
-                Score
+                Score (MM:SS:MILLIS)
             </th>
         </tr>
     </thead>
@@ -22,9 +22,37 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Time)
+                    @{
+                        int score = item.Time;
+                        int minutes = (int)Math.Floor(score / 60000.0);
+                        int seconds = (int)Math.Floor((score - minutes * 60000.0) / 1000.0);
+                        int remaining = (int)Math.Floor(score - minutes * 60000.0 - seconds * 1000.0);
+
+
+                        String minStr = minutes < 10 ? "0" + minutes : minutes + "";
+                        String secStr = seconds < 10 ? "0" + seconds : seconds + "";
+                        String remStr = "";
+                        if (remaining < 10)
+                        {
+                            remStr = "000" + remaining;
+                        }
+                        else if (remaining < 100)
+                        {
+                            remStr = "00" + remaining;
+                        }
+                        else if (remaining < 1000)
+                        {
+                            remStr = "0" + remaining;
+                        }
+                        else
+                        {
+                            remStr = remaining + "";
+                        }
+                    }
+                    @minStr:@seconds:@remStr
                 </td>
             </tr>
         }
+     
     </tbody>
 </table>

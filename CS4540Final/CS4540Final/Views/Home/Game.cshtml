@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" id="gameContainer">
+    <!--Canvas will go here.-->
+
+</div>
+
+
+<p style="text-align:center">For more information and help, visit <a asp-action="Rules" asp-controller="Home">Overview</a></p>
+
+<h2 id="status" style="text-align:center"></h2>
+
+
+
+
+
+@section Scripts{
+
+    <script src="~/gameFiles/p5.min.js"></script>
+    <script src="~/gameFiles/p5.sound.min.js"></script>
+    <script src="~/gameFiles/p5.dom.min.js"></script>
+    <script src="~/gameFiles/sketch.js"></script>
+    <script src="~/gameFiles/squareMaze.js"></script>
+    <script src="~/gameFiles/maze.js"></script>
+}

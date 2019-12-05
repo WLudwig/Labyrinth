@@ -30,13 +30,19 @@ namespace CS4540Final.Controllers
         [Authorize(Roles = "Player")]
         public async Task<IActionResult> HighScore()
         {
-            return View(await context.HighScore.ToListAsync());
+            return View(await context.HighScore.OrderBy(o => o.Time).ToListAsync()); //.ToListAsync());
+        }
+
+        [Authorize(Roles = "Administrator, Player")]
+        public IActionResult Game()
+        {
+            return View();
         }
 
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AdminHighScore()
         {
-            return View(await context.HighScore.ToListAsync());
+            return View(await context.HighScore.OrderBy(o => o.Time).ToListAsync());
         }
 
         [Authorize(Roles = "Player")]
@@ -51,6 +57,24 @@ namespace CS4540Final.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Player, Administrator")]
+        [HttpPost]
+        public JsonResult AddScore(int score)
+        {
+
+            try
+            {
+                context.HighScore.Add(new Models.HighScore { Name = User.Identity.Name, Time = score });
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return Json(new { status = "Failed" });
+            }
+            return Json(new { status = "Success" });
+
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -59,13 +83,13 @@ namespace CS4540Final.Controllers
 
         public async Task<IActionResult> Delete(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
             var highscore = await context.HighScore.FirstOrDefaultAsync(m => m.HighScoreID == id);
-            if(highscore == null)
+            if (highscore == null)
             {
                 return NotFound();
             }

@@ -1,4 +1,12 @@
-﻿using System;
+﻿/* Author: William Ludwig and Jacob Blomquist
+ * CS4540 Web Software
+ * 
+ * This is a Controller that holds the actions for all of
+ * the views that are used on the web application.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -30,7 +38,7 @@ namespace CS4540Final.Controllers
         [Authorize(Roles = "Player")]
         public async Task<IActionResult> HighScore()
         {
-            return View(await context.HighScore.OrderBy(o => o.Time).ToListAsync()); //.ToListAsync());
+            return View(await context.HighScore.OrderBy(o => o.Time).ToListAsync());
         }
 
         [Authorize(Roles = "Administrator, Player")]

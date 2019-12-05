@@ -1,4 +1,12 @@
-﻿using CS4540Final.Models;
+﻿/* Authors: William Ludwig and Jacob Blomquist
+ * Cs 4540: Web Software
+ * 
+ * Create the Databases and Seed the databases of 
+ * high scores and users and roles
+ * 
+ */
+
+using CS4540Final.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*Author: William Ludwig and Jacob Blomquist
+ * CS4540 Web Software
+ * 
+ * Create view for High Scores
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* Authors: William Ludwig and Jacob Blomquist
+ * Cs 4540: Web Software
+ * 
+ * Create the HighScore Database
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

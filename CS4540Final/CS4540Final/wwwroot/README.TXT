@@ -23,3 +23,8 @@ maze.js generates the maze, and squareMaze converts the generated maze into a fo
 There are also some ambient sound files included as well.
 The 'p5.dom.min.js' file contains the P5 library for manipulating the DOM, the 'p5.sound.min.js' file contains a framework
 for playing sound, and finally the 'p5.min.js' contains the core P5 framework. 
+
+LOGIN INFORMATION:
+We have seeded into the Users and Roles database an Administrator with login, wludwig@q.com and password 123abc123ABC! and a player
+with login, jacobrb95@gmail.com with password 123abc123ABC!.  To use our program you can use these seeded users or register a user
+and give it the roles that you want using the database tables.
